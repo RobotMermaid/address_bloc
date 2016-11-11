@@ -10,10 +10,11 @@ class MenuController
   def main_menu
     puts "Main Menu - #{address_book.entries.count} cosmonauts"
     puts "1 - View all cosmonauts"
-    puts "2 - Enter a new cosmonaut"
-    puts "3 - Search for a cosmonaut"
-    puts "4 - Import cosmonauts from a CSV"
-    puts "5 - Exit"
+    puts "2 - View Entry Number n"
+    puts "3 - Enter a new cosmonaut"
+    puts "4 - Search for a cosmonaut"
+    puts "5 - Import cosmonauts from a CSV"
+    puts "6 - Exit"
     print "Enter your selection: "
     selection = gets.to_i
 
@@ -24,17 +25,21 @@ class MenuController
         main_menu
       when 2
         system "clear"
-        create_entry
+        view_specific_entry
         main_menu
       when 3
         system "clear"
+        create_entry
+        main_menu
+      when 4
+        system "clear"
         search_entries
         main_menu
-     when 4
+     when 5
        system "clear"
        read_csv
        main_menu
-    when 5
+    when 6
       puts "Qapla'!"
       exit(0)
     else
@@ -48,11 +53,29 @@ class MenuController
     address_book.entries.each do |entry|
       system "clear"
       puts entry.to_s
-
       entry_submenu(entry)
     end
     system "clear"
     puts "End of entries"
+  end
+
+  def view_specific_entry
+    #gets value search entries and display one
+    print "Choose a cosmonaut's name: "
+    cosmo = nil
+    name = gets.chomp
+    address_book.entries.each do |entry|
+      if name == entry.name
+        cosmo = entry
+      end
+    end
+      if cosmo != nil
+        puts "here is the info for #{name}"
+        puts cosmo.to_s
+      else
+        puts "not valid"
+        main_menu
+      end
   end
 
   def create_entry
