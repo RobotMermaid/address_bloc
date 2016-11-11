@@ -25,7 +25,7 @@ class MenuController
         main_menu
       when 2
         system "clear"
-        view_specific_entry
+        entry_n_submenu
         main_menu
       when 3
         system "clear"
@@ -76,6 +76,20 @@ class MenuController
         puts "not valid"
         main_menu
       end
+  end
+
+  def entry_n_submenu
+    print "entry number to view: "
+    selection = gets.chomp.to_i
+    if selection < address_book.entries.count
+      puts address_book.entries[selection]
+      puts "press enter to return to the main menu"
+      gets.chomp
+      system "clear"
+    else
+      puts "#{selection} is invalid"
+      entry_n_submenu
+    end
   end
 
   def create_entry
