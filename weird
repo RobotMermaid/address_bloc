@@ -1,0 +1,63 @@
+Vesper@Minutia ~/D/R/B/address_bloc> rspec spec/address_book_spec.rb                              A7-newcsv!
+15/15: ***-_-_-_-_-_-__,------,
+12/15: ***-_-_-_-_-_-__|  /\_/\
+ 0/15: ***-_-_-_-_-_-_~|_( x .x)
+ 3/15: ***-_-_-_-_-_-_ ""  ""
+
+Failures:
+
+  1) AddressBook imports the 1st entry
+     Failure/Error: expect(entry.name).to eq expected_name
+
+       expected: "Ondine"
+            got: "Lala"
+
+       (compared using ==)
+     # ./spec/address_book_spec.rb:8:in `check_entry'
+     # ./spec/address_book_spec.rb:105:in `block (2 levels) in <top (required)>'
+
+  2) AddressBook imports the 2nd entry
+     Failure/Error: expect(entry.name).to eq expected_name
+
+       expected: "Orin"
+            got: "Ondine"
+
+       (compared using ==)
+     # ./spec/address_book_spec.rb:8:in `check_entry'
+     # ./spec/address_book_spec.rb:111:in `block (2 levels) in <top (required)>'
+
+  3) AddressBook imports the 3rd entry
+     Failure/Error: expect(entry.name).to eq expected_name
+
+       expected: "Lala"
+            got: "Orin"
+
+       (compared using ==)
+     # ./spec/address_book_spec.rb:8:in `check_entry'
+     # ./spec/address_book_spec.rb:117:in `block (2 levels) in <top (required)>'
+
+You've Nyaned for 0.16 seconds
+
+
+Finished in 0.16355 seconds (files took 0.12709 seconds to load)
+15 examples, 3 failures
+
+Failed examples:
+
+rspec ./spec/address_book_spec.rb:100 # AddressBook imports the 1st entry
+rspec ./spec/address_book_spec.rb:107 # AddressBook imports the 2nd entry
+rspec ./spec/address_book_spec.rb:113 # AddressBook imports the 3rd entry
+
+Vesper@Minutia ~/D/R/B/address_bloc> rspec spec/address_book_spec.rb                            1 A7-newcsv!
+15/15: -_-_-_-_-_-_-_-_,------,
+15/15: -_-_-_-_-_-_-_-_|   /\_/\
+ 0/15: -_-_-_-_-_-_-_-^|__( - .-)
+ 0/15: -_-_-_-_-_-_-_- " "  " "
+
+You've Nyaned for 0.13 seconds
+
+
+Finished in 0.13239 seconds (files took 0.12688 seconds to load)
+15 examples, 0 failures
+
+Vesper@Minutia ~/D/R/B/address_bloc>   
