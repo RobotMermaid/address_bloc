@@ -13,7 +13,8 @@ class MenuController
     puts "2 - Enter a new cosmonaut"
     puts "3 - Search for a cosmonaut"
     puts "4 - Import cosmonauts from a CSV"
-    puts "5 - Exit"
+    puts "5 - annihilate this list"
+    puts "6 - Exit"
     print "Enter your selection: "
     selection = gets.to_i
 
@@ -34,7 +35,11 @@ class MenuController
        system "clear"
        read_csv
        main_menu
-    when 5
+     when 5
+       system "clear"
+       annihilate
+       main_menu
+    when 6
       puts "Qapla'!"
       exit(0)
     else
@@ -43,7 +48,10 @@ class MenuController
       main_menu
     end
   end
-
+  def annihilate()
+    address_book.entries.clear
+    puts "no more cosmonauts"
+  end
   def view_all_entries
     address_book.entries.each do |entry|
       system "clear"
@@ -149,6 +157,8 @@ class MenuController
     puts "Udated entry: "
     puts entry
   end
+
+
 
   def search_submenu(entry)
       puts "\nd - delete entry"
